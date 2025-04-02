@@ -1,0 +1,110 @@
+<div class="contact-container">
+    <div class="section-header" [@fadeInUp]="'in'">
+        <h2>Contact Me</h2>
+        <p>Let's connect! Send me a message or reach out through social media</p>
+    </div>
+
+    <div class="contact-content">
+        <div class="contact-info" [@fadeInUp]="'in'">
+            <div class="social-links">
+                <h3>Find Me On</h3>
+                <div class="links">
+                    <a *ngFor="let social of socialLinks"
+                       [href]="social.url"
+                       target="_blank"
+                       [attr.aria-label]="social.name">
+                        <div class="social-icon" [innerHTML]="social.icon"></div>
+                        <span>{{ social.name }}</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="contact-details">
+                <h3>Contact Details</h3>
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <a href="mailto:milad.mofidi@example.com">milad.mofidi&#64;example.com</a>
+                </div>
+                <div class="detail-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                        <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span>San Francisco, CA</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-form" [@fadeInUp]="'in'">
+            <h3>Send Me a Message</h3>
+
+            <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input
+                            type="text"
+                            id="name"
+                            formControlName="name"
+                            class="form-control"
+                            [class.is-invalid]="formSubmitted && contactForm.get('name')?.errors">
+                    <div *ngIf="formSubmitted && contactForm.get('name')?.errors" class="error-message">
+                        <span *ngIf="contactForm.get('name')?.errors?.['required']">Name is required</span>
+                        <span *ngIf="contactForm.get('name')?.errors?.['minlength']">Name must be at least 2 characters</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                            type="email"
+                            id="email"
+                            formControlName="email"
+                            class="form-control"
+                            [class.is-invalid]="formSubmitted && contactForm.get('email')?.errors">
+                    <div *ngIf="formSubmitted && contactForm.get('email')?.errors" class="error-message">
+                        <span *ngIf="contactForm.get('email')?.errors?.['required']">Email is required</span>
+                        <span *ngIf="contactForm.get('email')?.errors?.['email']">Please enter a valid email address</span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea
+                            id="message"
+                            formControlName="message"
+                            class="form-control"
+                            rows="4"
+                            [class.is-invalid]="formSubmitted && contactForm.get('message')?.errors"></textarea>
+                    <div *ngIf="formSubmitted && contactForm.get('message')?.errors" class="error-message">
+                        <span *ngIf="contactForm.get('message')?.errors?.['required']">Message is required</span>
+                        <span *ngIf="contactForm.get('message')?.errors?.['minlength']">Message must be at least 10 characters</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="submitting">
+                    {{ submitting ? 'Sending...' : 'Send Message' }}
+                </button>
+            </form>
+
+            <div *ngIf="formSubmitSuccess" class="success-message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                </svg>
+                Thank you! Your message has been sent successfully.
+            </div>
+
+            <div *ngIf="formSubmitError" class="error-message">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                </svg>
+                Sorry, something went wrong. Please try again later.
+            </div>
+        </div>
+    </div>
+</div>

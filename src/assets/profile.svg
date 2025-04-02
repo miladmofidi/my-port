@@ -1,0 +1,14 @@
+<svg width="280" height="280" viewBox="0 0 280 280" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradientBackground" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4a6eff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#4a6eff" stop-opacity="0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="140" cy="140" r="140" fill="url(#gradientBackground)"/>
+  
+  <!-- Placeholder Silhouette -->
+  <path d="M140 155c30.5 0 55-24.5 55-55s-24.5-55-55-55-55 24.5-55 55 24.5 55 55 55zm0 25c-36.6 0-110 18.3-110 55v20c0 13.8 11.2 25 25 25h170c13.8 0 25-11.2 25-25v-20c0-36.7-73.4-55-110-55z" fill="#4a6eff"/>
+</svg>

@@ -1,0 +1,270 @@
+.experiences-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 60px;
+  
+  h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 15px;
+    position: relative;
+    display: inline-block;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70px;
+      height: 3px;
+      background-color: #4a6eff;
+    }
+  }
+  
+  p {
+    font-size: 1.2rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+.timeline {
+  position: relative;
+  max-width: 1140px;
+  margin: 0 auto;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    background-color: #eee;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -1.5px;
+  }
+}
+
+.timeline-item {
+  padding: 10px 40px;
+  position: relative;
+  width: 50%;
+  box-sizing: border-box;
+  margin-bottom: 30px;
+  
+  &::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: -10px;
+    background-color: white;
+    border: 3px solid #4a6eff;
+    top: 15px;
+    border-radius: 50%;
+    z-index: 1;
+  }
+  
+  &.right {
+    left: 50%;
+    
+    &::after {
+      left: -10px;
+    }
+    
+    .timeline-content {
+      &::before {
+        left: -15px;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+    }
+  }
+  
+  .timeline-badge {
+    position: absolute;
+    top: 5px;
+    right: -55px;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #4a6eff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    
+    svg {
+      width: 20px;
+      height: 20px;
+    }
+  }
+  
+  &.right .timeline-badge {
+    left: -55px;
+  }
+  
+  .timeline-content {
+    position: relative;
+    padding: 25px;
+    background-color: white;
+    border-radius: 6px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    
+    &::before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      right: -15px;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 10px 0 10px 15px;
+      border-color: transparent transparent transparent white;
+    }
+    
+    .experience-header {
+      margin-bottom: 15px;
+      
+      h3 {
+        margin: 0 0 5px;
+        font-size: 1.4rem;
+        font-weight: 600;
+        color: #333;
+      }
+      
+      h4 {
+        margin: 0 0 10px;
+        font-size: 1.2rem;
+        font-weight: 500;
+        color: #4a6eff;
+      }
+      
+      .experience-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 0.9rem;
+        color: #666;
+        
+        span {
+          display: flex;
+          align-items: center;
+          
+          svg {
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+    
+    .responsibilities {
+      padding-left: 20px;
+      margin: 0;
+      
+      li {
+        margin-bottom: 8px;
+        line-height: 1.5;
+        color: #555;
+        
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .timeline {
+    &::after {
+      left: 31px;
+    }
+  }
+  
+  .timeline-item {
+    width: 100%;
+    padding-left: 80px;
+    padding-right: 25px;
+    
+    &::after {
+      left: 21px;
+      right: auto;
+    }
+    
+    &.right {
+      left: 0;
+      
+      &::after {
+        left: 21px;
+      }
+      
+      .timeline-content {
+        &::before {
+          left: -15px;
+          border-width: 10px 15px 10px 0;
+          border-color: transparent white transparent transparent;
+        }
+      }
+    }
+    
+    .timeline-badge {
+      left: 10px;
+      right: auto;
+    }
+    
+    .timeline-content {
+      &::before {
+        left: -15px;
+        right: auto;
+        border-width: 10px 15px 10px 0;
+        border-color: transparent white transparent transparent;
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .section-header {
+    h2 {
+      font-size: 2.4rem;
+    }
+    
+    p {
+      font-size: 1.1rem;
+    }
+  }
+  
+  .timeline-item {
+    padding-left: 70px;
+    
+    .timeline-content {
+      padding: 15px;
+      
+      .experience-header {
+        h3 {
+          font-size: 1.2rem;
+        }
+        
+        h4 {
+          font-size: 1.1rem;
+        }
+        
+        .experience-meta {
+          font-size: 0.8rem;
+          flex-direction: column;
+          gap: 5px;
+        }
+      }
+    }
+  }
+}
