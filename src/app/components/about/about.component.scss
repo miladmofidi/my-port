@@ -13,13 +13,13 @@
   flex: 0 0 auto;
   
   .image-container {
-    width: 280px;
-    height: 280px;
+    width: 320px;
+    height: 320px;
     border-radius: 50%;
     overflow: hidden;
     border: 5px solid #4a6eff;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-    animation: pulse 6s infinite alternate;
+    box-shadow: 30px 60px 120px rgba(0, 0, 0, 0.15);
+    animation: pulse 1s infinite alternate;
     
     img {
       width: 100%;

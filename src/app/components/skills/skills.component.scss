@@ -7,7 +7,7 @@
 .section-header {
   text-align: center;
   margin-bottom: 60px;
-  
+
   h2 {
     font-size: 2.8rem;
     font-weight: 700;
@@ -15,7 +15,7 @@
     margin-bottom: 15px;
     position: relative;
     display: inline-block;
-    
+
     &::after {
       content: '';
       position: absolute;
@@ -27,7 +27,7 @@
       background-color: #4a6eff;
     }
   }
-  
+
   p {
     font-size: 1.2rem;
     color: #666;
@@ -38,7 +38,8 @@
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  grid-template-columns: repeat(5, 1fr); // 3 columns for 2 rows
+  grid-template-rows: auto auto; // 2 rows
   gap: 30px;
 }
 
@@ -48,65 +49,67 @@
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
+
   &:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
   }
-  
+
   .category-header {
     background-color: #4a6eff;
     padding: 15px 20px;
-    
+
     h3 {
       color: white;
       margin: 0;
-      font-size: 1.3rem;
+      font-size: 1.4rem; // Slightly smaller category header
       font-weight: 600;
     }
   }
-  
+
   .skill-list {
-    padding: 20px;
+    padding: 20px; // Reduced padding
   }
-  
+
   .skill-item {
-    margin-bottom: 15px;
-    
+    margin-bottom: 10px; // Reduced margin
+
     &:last-child {
       margin-bottom: 0;
     }
-    
+
     .skill-info {
       display: flex;
       justify-content: space-between;
-      margin-bottom: 6px;
-      
+      margin-bottom: 4px; // Reduced margin
+
       .skill-name {
         font-weight: 500;
         color: #333;
+        font-size: 1.1rem; // Slightly smaller skill name
       }
-      
+
       .skill-percentage {
         font-weight: 400;
         color: #666;
+        font-size: 0.95rem; // Slightly smaller skill percentage
       }
     }
-    
+
     .skill-bar {
-      height: 8px;
+      height: 6px; // Reduced height
       background-color: #e0e0e0;
-      border-radius: 4px;
+      border-radius: 3px; // Reduced radius
       overflow: hidden;
-      
+
       .skill-progress {
         height: 100%;
         background-color: #4a6eff;
-        border-radius: 4px;
+        border-radius: 3px; // Reduced radius
         position: relative;
         width: 0;
         animation: progress-animation 1.5s ease-out forwards;
-        
+
         &::after {
           content: '';
           position: absolute;
@@ -114,10 +117,10 @@
           left: 0;
           right: 0;
           bottom: 0;
-          background: linear-gradient(90deg, 
-            rgba(255, 255, 255, 0.1) 0%, 
-            rgba(255, 255, 255, 0.3) 50%, 
-            rgba(255, 255, 255, 0.1) 100%);
+          background: linear-gradient(90deg,
+                  rgba(255, 255, 255, 0.1) 0%,
+                  rgba(255, 255, 255, 0.3) 50%,
+                  rgba(255, 255, 255, 0.1) 100%);
         }
       }
     }
@@ -125,20 +128,26 @@
 }
 
 @keyframes progress-animation {
-  0% { width: 0; }
-  100% { width: var(--skill-percentage); }
+  0% {
+    width: 0;
+  }
+
+  100% {
+    width: var(--skill-percentage);
+  }
 }
 
 @media (max-width: 768px) {
   .skills-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto; // Remove explicit row setting for mobile
   }
-  
+
   .section-header {
     h2 {
       font-size: 2.4rem;
     }
-    
+
     p {
       font-size: 1.1rem;
     }
