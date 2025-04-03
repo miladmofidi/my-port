@@ -1,27 +1,53 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+
+div {
+  min-height: 100vh; /* Ensure the wrapper fills the whole screen */
+}
+
+section {
+  min-height: 100vh; /* Each section fills the viewport height */
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white; /* Ensure contrasting text color for readability */
+  text-align: center;
+  padding: 20px;
+}
+
+/* Optional: Add a smooth scroll effect */
+html {
+  scroll-behavior: smooth;
+}
+
 .portfolio-container {
   font-family: 'Poppins', sans-serif;
   color: #333;
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
-  background-color: #f9f9f9;
+
+  /* Add these properties for gradient animation */
+  background-size: 200%; /* Ensures the gradient can shift dynamically */
+  animation: gradientShift 10s ease infinite; /* Applies the gradient shifting animation */
+  transition: background 0.5s ease; /* Adds a smooth transition when sections change */
 }
 
-.content {
-  padding-top: 70px; // space for fixed navbar
-}
-
-section {
-  min-height: 100vh;
-  padding: 80px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  scroll-margin-top: 70px; // Adjust for fixed navbar when scrolling
-}
-
-section:nth-child(even) {
-  background-color: #f0f0f0;
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%; /* Initial gradient position */
+  }
+  50% {
+    background-position: 100% 50%; /* Gradually shifts to the other side */
+  }
+  100% {
+    background-position: 0% 50%; /* Resets the position */
+  }
 }
 
 .footer {
@@ -37,7 +63,6 @@ section:nth-child(even) {
   margin: 0 auto;
   padding: 0 20px;
 }
-
 @media (max-width: 768px) {
   section {
     padding: 60px 20px;

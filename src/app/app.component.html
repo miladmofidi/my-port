@@ -1,34 +1,41 @@
-<div class="portfolio-container">
-  <app-navbar 
-    [activeSection]="activeSection" 
-    (sectionChange)="scrollToSection($event)">
-  </app-navbar>
-  
-  <main class="content">
-    <section id="about" appScrollAnimation>
-      <app-about></app-about>
-    </section>
-    
-    <section id="skills" appScrollAnimation>
-      <app-skills></app-skills>
-    </section>
-    
-    <section id="projects" appScrollAnimation>
-      <app-projects></app-projects>
-    </section>
-    
-    <section id="experiences" appScrollAnimation>
-      <app-experiences></app-experiences>
-    </section>
-    
-    <section id="contact" appScrollAnimation>
-      <app-contact></app-contact>
-    </section>
-  </main>
-  
-  <footer class="footer">
-    <div class="footer-content">
-      <p>&copy; {{ 2023 | date: 'yyyy' }} Milad Mofidi. All rights reserved.</p>
-    </div>
-  </footer>
+<div
+        class="portfolio-container"
+        [ngStyle]="{ 'background': backgroundGradient, 'transition': 'background 0.5s ease-in-out' }"
+>
+    <!-- Navbar Component -->
+    <app-navbar
+            [activeSection]="activeSection"
+            (sectionChange)="scrollToSection($event)"
+    >
+    </app-navbar>
+
+    <!-- Content -->
+    <main class="content">
+        <section id="about" appScrollAnimation>
+            <app-about></app-about>
+        </section>
+
+        <section id="skills" appScrollAnimation>
+            <app-skills></app-skills>
+        </section>
+
+        <section id="projects" appScrollAnimation>
+            <app-projects></app-projects>
+        </section>
+
+        <section id="experiences" appScrollAnimation>
+            <app-experiences></app-experiences>
+        </section>
+
+        <section id="contact" appScrollAnimation>
+            <app-contact></app-contact>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; {{ 2023 | date: 'yyyy' }} Milad Mofidi. All rights reserved.</p>
+        </div>
+    </footer>
 </div>
