@@ -32,11 +32,14 @@ html {
   position: relative;
   min-height: 100vh;
 
-  /* Add these properties for gradient animation */
-  background-size: 200%; /* Ensures the gradient can shift dynamically */
-  animation: gradientShift 10s ease infinite; /* Applies the gradient shifting animation */
-  transition: background 0.5s ease; /* Adds a smooth transition when sections change */
+  /* Set the vertical gradient flow */
+  background: linear-gradient(180deg, #ffffff 0%, #4a90e2 30%, #50e3c2 70%, #134AB4FF 100%);
+
+  /* Important: Make the gradient span the entire document height */
+  background-size: 100% 200%;
+  background-attachment: fixed; /* Keeps the gradient fixed as the user scrolls */
 }
+
 
 @keyframes gradientShift {
   0% {
