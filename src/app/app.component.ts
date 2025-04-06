@@ -24,6 +24,7 @@ export class AppComponent {
   backgroundGradient: string =
       'linear-gradient(180deg, #ffffff 0%, #4a90e2 30%, #50e3c2 70%, #134AB4FF 100%)'; // Smooth vertical gradient
 
+  currentYear: number = new Date().getFullYear();
 
 
 

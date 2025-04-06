@@ -29,6 +29,14 @@
   }
 }
 
+.software-title {
+  font-size: 2rem; /* Adjust size as needed */
+  font-weight: 700; /* Make it bold */
+  color: rgba(0, 0, 0, 0.66); /* Black color */
+  margin-top: 0;
+  margin-bottom: 20px; /* Maintain spacing */
+}
+
 .content {
   flex: 1;
   text-align: left;
@@ -122,6 +130,11 @@
   margin: 10px 0; /* Reduced top and bottom margin for better alignment */
 }
 
+.cta-buttons .btn i {
+  margin-right: 8px; /* Adds some space between the icon and text */
+  font-size: 1.2rem; /* Adjusts the size of the icons */
+  vertical-align: middle; /* Aligns icons nicely with text */
+}
 
 @keyframes blink {
   0%, 100% { opacity: 1; }

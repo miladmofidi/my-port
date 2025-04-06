@@ -5,69 +5,40 @@ html, body {
   overflow-x: hidden;
 }
 
-div {
-  min-height: 100vh; /* Ensure the wrapper fills the whole screen */
+.portfolio-container {
+  display: flex;
+  flex-direction: column; /* Stack all child items vertically */
+  min-height: 100vh; /* Ensure the wrapper fills the whole viewport height */
+}
+
+main.content {
+  flex: 1; /* Allow the main content to grow and take up available space */
 }
 
 section {
-  min-height: 100vh; /* Each section fills the viewport height */
+  min-height: 100vh; /* Ensure sections take up full viewport height */
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white; /* Ensure contrasting text color for readability */
   text-align: center;
-  padding: 20px;
-}
-
-/* Optional: Add a smooth scroll effect */
-html {
-  scroll-behavior: smooth;
-}
-
-.portfolio-container {
-  font-family: 'Poppins', sans-serif;
-  color: #333;
-  overflow-x: hidden;
-  position: relative;
-  min-height: 100vh;
-
-  /* Set the vertical gradient flow */
-  background: linear-gradient(180deg, #ffffff 0%, #4a90e2 30%, #50e3c2 70%, #134AB4FF 100%);
-
-  /* Important: Make the gradient span the entire document height */
-  background-size: 100% 200%;
-  background-attachment: fixed; /* Keeps the gradient fixed as the user scrolls */
-}
-
-
-@keyframes gradientShift {
-  0% {
-    background-position: 0% 50%; /* Initial gradient position */
-  }
-  50% {
-    background-position: 100% 50%; /* Gradually shifts to the other side */
-  }
-  100% {
-    background-position: 0% 50%; /* Resets the position */
-  }
 }
 
 .footer {
-  max-height: 100px;
+  max-height: 50px;
   text-align: center;
   padding: 20px 0;
   background-color: #333;
   color: #fff;
-  margin-top: 40px;
 }
 
 .footer-content {
   max-width: 1200px;
-  max-height: 100px;
   margin: 0 auto;
   padding: 0 20px;
 }
+
 @media (max-width: 768px) {
   section {
     padding: 60px 20px;

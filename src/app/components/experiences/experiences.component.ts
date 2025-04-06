@@ -22,7 +22,7 @@ export class ExperiencesComponent implements OnInit {
       title: 'Senior Software Engineer',
       company: 'TechCorp Solutions',
       period: 'January 2020 - Present',
-      location: 'San Francisco, CA',
+      location: 'Lisbon, PT',
       description: [
         'Lead development of microservices architecture using Node.js and Docker',
         'Architected and implemented RESTful APIs serving over 1M daily requests',
