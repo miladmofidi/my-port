@@ -3,7 +3,7 @@
   margin: 0 auto;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 60px;
   padding: 0 20px;
@@ -31,9 +31,10 @@
 
 .content {
   flex: 1;
-  
+  text-align: left;
+
   .typed-name {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     
     h2 {
       font-size: 2.8rem;
@@ -41,7 +42,7 @@
       color: #333;
       display: flex;
       align-items: center;
-      
+
       .name {
         display: inline-block;
         color: #4a6eff;
@@ -57,12 +58,12 @@
   }
   
   h1 {
-    font-size: 3.4rem;
+    font-size: 2.4rem;
     margin-top: 0;
     margin-bottom: 20px;
     color: #333;
     font-weight: 700;
-    
+
     span {
       color: #4a6eff;
     }
@@ -115,6 +116,12 @@
     }
   }
 }
+
+
+.content h1 {
+  margin: 10px 0; /* Reduced top and bottom margin for better alignment */
+}
+
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
