@@ -54,6 +54,7 @@ html {
 }
 
 .footer {
+  max-height: 100px;
   text-align: center;
   padding: 20px 0;
   background-color: #333;
@@ -63,6 +64,7 @@ html {
 
 .footer-content {
   max-width: 1200px;
+  max-height: 100px;
   margin: 0 auto;
   padding: 0 20px;
 }
